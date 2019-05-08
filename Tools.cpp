@@ -21,7 +21,7 @@ string Tools::getFilename(const string s){
 bool Tools::loadMultifastaFile(const string filename, vector<FastaElement>& fs){
   bool ret=true;
   // File open
-  ifstream is(filename.c_str());
+  std::ifstream is(filename.c_str());
   if(!is.good()){
       cout << "Error! function " << __FUNCTION__ << " cannot open " << filename << endl;
       ret=false;

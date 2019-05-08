@@ -35,7 +35,7 @@ void computeAndSave(const FastaElement& sequence, const set<string>& setOfpatter
 
 bool saveSet(const string outputFilename, const set<string>& s){
     // ... Open output file
-    ofstream osData(outputFilename.c_str());
+    std::ofstream osData(outputFilename.c_str());
     if(!osData.good()){
         cout << "Error! function " << __FUNCTION__ << " cannot open " << outputFilename << endl;
         return false;
@@ -121,7 +121,7 @@ int main(int argc, const char *argv[]) {
     // ====================
     //// a. familiarity
     string outputFamiliarityFilename=outputFolder+"familiarity.csv";
-    ofstream osFamiliarity(outputFamiliarityFilename.c_str());
+    std::ofstream osFamiliarity(outputFamiliarityFilename.c_str());
     if(!osFamiliarity.good()){
         cout << "Error! File " << outputFamiliarityFilename << " cannot be opened " << endl;
         return 1;
@@ -131,7 +131,7 @@ int main(int argc, const char *argv[]) {
 
     //// b. coverage
     string outputCoverageFilename=outputFolder+"coverage.csv";
-    ofstream osCoverage(outputCoverageFilename.c_str());
+    std::ofstream osCoverage(outputCoverageFilename.c_str());
     if(!osCoverage.good()){
         cout << "Error! File " << outputCoverageFilename << " cannot be opened " << endl;
         return 1;
